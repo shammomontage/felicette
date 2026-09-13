@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <radialGradient id="space" cx="50%" cy="40%" r="75%">
+      <stop offset="0" stop-color="#1b2a5e"/>
+      <stop offset="0.6" stop-color="#0c1436"/>
+      <stop offset="1" stop-color="#05081c"/>
+    </radialGradient>
+    <linearGradient id="visor" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="0.35" stop-color="#9fd4ff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9edf3"/>
+      <stop offset="0.5" stop-color="#aab4c4"/>
+      <stop offset="1" stop-color="#6d7a8e"/>
+    </linearGradient>
+    <linearGradient id="suit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6efe2"/>
+      <stop offset="1" stop-color="#d9cdb8"/>
+    </linearGradient>
+    <linearGradient id="rocket" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#c9d1dc"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff2a8"/>
+      <stop offset="0.5" stop-color="#ff9a2e"/>
+      <stop offset="1" stop-color="#ff4e1a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="1024" height="1024" fill="url(#space)"/>
+  <g fill="#ffffff">
+    <circle cx="90" cy="120" r="2.5"/><circle cx="200" cy="60" r="1.8"/><circle cx="320" cy="150" r="2.2"/>
+    <circle cx="470" cy="70" r="1.6"/><circle cx="640" cy="110" r="2.6"/><circle cx="760" cy="50" r="1.8"/>
+    <circle cx="900" cy="140" r="2.4"/><circle cx="960" cy="300" r="1.7"/><circle cx="60" cy="330" r="1.9"/>
+    <circle cx="140" cy="520" r="2.3"/><circle cx="950" cy="560" r="2.1"/><circle cx="80" cy="760" r="1.8"/>
+    <circle cx="940" cy="800" r="2.5"/><circle cx="560" cy="180" r="1.5"/><circle cx="820" cy="230" r="1.6"/>
+    <circle cx="240" cy="260" r="1.4"/><circle cx="700" cy="330" r="1.5"/><circle cx="130" cy="900" r="1.8"/>
+  </g>
+  <!-- twinkle stars -->
+  <g stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.9">
+    <path d="M150 210v26M137 223h26"/><path d="M870 400v22M859 411h22"/><path d="M330 880v22M319 891h22"/>
+  </g>
+  <!-- orbit arc -->
+  <ellipse cx="512" cy="560" rx="470" ry="330" fill="none" stroke="#5f7ad1" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="14 12"/>
+
+  <!-- small retro rocket (Véronique) top-right -->
+  <g transform="translate(790 250) rotate(-30)">
+    <path d="M0 -120 C40 -80 40 40 0 90 C-40 40 -40 -80 0 -120Z" fill="url(#rocket)" stroke="#2a3350" stroke-width="5"/>
+    <path d="M-22 40 L-52 96 L-18 84 Z" fill="#e5462a" stroke="#2a3350" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M22 40 L52 96 L18 84 Z" fill="#e5462a" stroke="#2a3350" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="0" cy="-30" r="14" fill="#7fd3ff" stroke="#2a3350" stroke-width="5"/>
+    <path d="M-16 92 C-8 150 8 150 16 92Z" fill="url(#flame)"/>
+  </g>
+
+  <!-- body / suit -->
+  <path d="M232 1024 C232 800 330 700 512 700 C694 700 792 800 792 1024 Z" fill="url(#suit)" stroke="#2a3350" stroke-width="8"/>
+  <!-- suit seams -->
+  <path d="M512 720 V1024" stroke="#2a3350" stroke-opacity="0.35" stroke-width="5"/>
+  <path d="M330 800 C400 770 624 770 694 800" fill="none" stroke="#e5462a" stroke-width="10" stroke-linecap="round"/>
+  <!-- tricolore patch (left chest) -->
+  <g transform="translate(360 830)">
+    <rect x="0" y="0" width="90" height="60" rx="8" fill="#2a3350"/>
+    <rect x="6" y="6" width="26" height="48" rx="4" fill="#2f5ecf"/>
+    <rect x="32" y="6" width="26" height="48" fill="#ffffff"/>
+    <rect x="58" y="6" width="26" height="48" rx="4" fill="#e5462a"/>
+  </g>
+  <!-- mission patch (right chest) -->
+  <g transform="translate(600 815)">
+    <circle cx="40" cy="40" r="42" fill="#2a3350"/>
+    <circle cx="40" cy="40" r="35" fill="#f6efe2"/>
+    <text x="40" y="34" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="20" fill="#2a3350">AG1</text>
+    <text x="40" y="58" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="15" fill="#e5462a">1963</text>
+  </g>
+
+  <!-- helmet neck ring -->
+  <ellipse cx="512" cy="712" rx="182" ry="48" fill="url(#ring)" stroke="#2a3350" stroke-width="8"/>
+  <ellipse cx="512" cy="704" rx="150" ry="30" fill="#3a4460" stroke="#2a3350" stroke-width="6"/>
+
+  <!-- head group -->
+  <g transform="translate(512 470) scale(1.08) translate(-512 -470)">
+    <!-- ears -->
+    <path d="M335 425 L350 312 L448 336 Z" fill="#1c2130" stroke="#5a6684" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M689 425 L674 312 L576 336 Z" fill="#1c2130" stroke="#5a6684" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M352 412 L360 332 L438 354 Z" fill="#f1a1b4"/>
+    <path d="M672 412 L664 332 L586 354 Z" fill="#f1a1b4"/>
+    <!-- head -->
+    <path d="M512 640 C380 640 322 560 322 460 C322 360 400 300 512 300 C624 300 702 360 702 460 C702 560 644 640 512 640 Z" fill="#1c2130" stroke="#5a6684" stroke-width="8"/>
+    <!-- white blaze / muzzle (tuxedo) -->
+    <path d="M512 380 C470 440 420 470 400 560 C420 620 470 640 512 640 C554 640 604 620 624 560 C604 470 554 440 512 380 Z" fill="#ffffff"/>
+    <!-- electrodes (the nerdy detail) -->
+    <g>
+      <circle cx="470" cy="318" r="9" fill="#c9d1dc" stroke="#2a3350" stroke-width="4"/>
+      <circle cx="512" cy="306" r="9" fill="#c9d1dc" stroke="#2a3350" stroke-width="4"/>
+      <circle cx="554" cy="318" r="9" fill="#c9d1dc" stroke="#2a3350" stroke-width="4"/>
+      <path d="M470 318 C480 290 500 290 512 306 C524 290 544 290 554 318" fill="none" stroke="#e5462a" stroke-width="4"/>
+    </g>
+    <!-- eyes -->
+    <ellipse cx="452" cy="470" rx="44" ry="50" fill="#ffffff" stroke="#2a3350" stroke-width="6"/>
+    <ellipse cx="572" cy="470" rx="44" ry="50" fill="#ffffff" stroke="#2a3350" stroke-width="6"/>
+    <ellipse cx="456" cy="474" rx="26" ry="36" fill="#7bc043"/>
+    <ellipse cx="576" cy="474" rx="26" ry="36" fill="#7bc043"/>
+    <ellipse cx="458" cy="478" rx="9" ry="28" fill="#161a26"/>
+    <ellipse cx="578" cy="478" rx="9" ry="28" fill="#161a26"/>
+    <circle cx="466" cy="456" r="8" fill="#ffffff"/>
+    <circle cx="586" cy="456" r="8" fill="#ffffff"/>
+    <!-- nose + mouth -->
+    <path d="M498 540 L526 540 L512 558 Z" fill="#f1a1b4" stroke="#2a3350" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M512 558 C512 578 494 584 484 574 M512 558 C512 578 530 584 540 574" fill="none" stroke="#2a3350" stroke-width="5" stroke-linecap="round"/>
+    <!-- whiskers -->
+    <g stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.9">
+      <path d="M400 540 L336 528"/><path d="M400 560 L336 570"/>
+      <path d="M624 540 L688 528"/><path d="M624 560 L688 570"/>
+    </g>
+  </g>
+
+  <!-- helmet bubble -->
+  <circle cx="512" cy="470" r="250" fill="url(#visor)" stroke="#e9edf3" stroke-width="10"/>
+  <circle cx="512" cy="470" r="250" fill="none" stroke="#2a3350" stroke-width="4" stroke-opacity="0.6"/>
+  <!-- helmet highlight -->
+  <path d="M340 340 C380 270 460 240 530 245" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-opacity="0.75"/>
+  <path d="M320 400 C325 385 332 372 340 360" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-opacity="0.6"/>
+
+  <!-- name plate -->
+  <g transform="translate(0 0)">
+    <rect x="262" y="935" width="500" height="64" rx="14" fill="#0c1436" stroke="#e9edf3" stroke-width="4"/>
+    <text x="512" y="981" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="44" fill="#ffffff" letter-spacing="4">FÉLICETTE</text>
+  </g>
+</svg>

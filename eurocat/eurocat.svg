@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#1f4bd8"/>
+      <stop offset="0.65" stop-color="#0f2d9a"/>
+      <stop offset="1" stop-color="#081a5c"/>
+    </radialGradient>
+    <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b9c3d6"/>
+      <stop offset="1" stop-color="#8e9bb5"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe680"/>
+      <stop offset="0.5" stop-color="#f5c400"/>
+      <stop offset="1" stop-color="#c99700"/>
+    </linearGradient>
+    <linearGradient id="jacket" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b2140"/>
+      <stop offset="1" stop-color="#0e1330"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <path id="star" d="M0 -30 L8.8 -9.3 L31 -9.3 L13 4.6 L19.5 26 L0 13 L-19.5 26 L-13 4.6 L-31 -9.3 L-8.8 -9.3 Z"/>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+
+  <!-- subtle rising chart line in background -->
+  <path d="M60 760 L200 700 L300 730 L420 620 L520 650 L640 520 L760 560 L960 340" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- ring of 12 stars (halo) -->
+  <g fill="url(#gold)" stroke="#0e1330" stroke-width="3" stroke-linejoin="round">
+    <use href="#star" transform="translate(512 130)"/>
+    <use href="#star" transform="translate(682 176)"/>
+    <use href="#star" transform="translate(806 300)"/>
+    <use href="#star" transform="translate(852 470)"/>
+    <use href="#star" transform="translate(806 640)"/>
+    <use href="#star" transform="translate(682 764)"/>
+    <use href="#star" transform="translate(342 764)"/>
+    <use href="#star" transform="translate(218 640)"/>
+    <use href="#star" transform="translate(172 470)"/>
+    <use href="#star" transform="translate(218 300)"/>
+    <use href="#star" transform="translate(342 176)"/>
+    <use href="#star" transform="translate(512 810)"/>
+  </g>
+
+  <!-- body: navy banker jacket -->
+  <path d="M212 1024 C212 820 320 720 512 720 C704 720 812 820 812 1024 Z" fill="url(#jacket)" stroke="#070a1f" stroke-width="8"/>
+  <!-- lapels + shirt -->
+  <path d="M430 730 L512 900 L594 730 Z" fill="#ffffff" stroke="#070a1f" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M430 730 L512 900 L470 930 L400 760 Z" fill="#232a52" stroke="#070a1f" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M594 730 L512 900 L554 930 L624 760 Z" fill="#232a52" stroke="#070a1f" stroke-width="6" stroke-linejoin="round"/>
+  <!-- gold tie -->
+  <path d="M496 760 L528 760 L540 840 L512 900 L484 840 Z" fill="url(#gold)" stroke="#070a1f" stroke-width="5" stroke-linejoin="round"/>
+  <!-- pocket square -->
+  <path d="M640 800 L700 780 L690 815 Z" fill="#f5c400" stroke="#070a1f" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- paw holding a euro coin (right side) -->
+  <g transform="translate(790 850)">
+    <path d="M-70 80 C-90 40 -60 10 -30 30 C-10 10 25 15 30 45 C60 35 80 70 50 95 C70 130 30 155 0 135 C-40 160 -85 130 -70 80 Z" fill="url(#fur)" stroke="#070a1f" stroke-width="7" stroke-linejoin="round"/>
+    <circle cx="0" cy="-30" r="86" fill="url(#gold)" stroke="#070a1f" stroke-width="8"/>
+    <circle cx="0" cy="-30" r="66" fill="none" stroke="#a87c00" stroke-width="5" stroke-dasharray="6 5"/>
+    <text x="2" y="4" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="96" fill="#8a6500">€</text>
+    <text x="-2" y="0" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="96" fill="#fff3b0">€</text>
+    <circle cx="-44" cy="52" r="12" fill="#e9a3b5" stroke="#070a1f" stroke-width="3"/>
+    <circle cx="-10" cy="44" r="12" fill="#e9a3b5" stroke="#070a1f" stroke-width="3"/>
+    <circle cx="24" cy="54" r="12" fill="#e9a3b5" stroke="#070a1f" stroke-width="3"/>
+    <ellipse cx="-10" cy="98" rx="30" ry="22" fill="#e9a3b5"/>
+  </g>
+
+  <!-- head -->
+  <g>
+    <!-- ears -->
+    <path d="M318 430 L300 235 L456 320 Z" fill="url(#fur)" stroke="#070a1f" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M706 430 L724 235 L568 320 Z" fill="url(#fur)" stroke="#070a1f" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M338 400 L328 275 L436 334 Z" fill="#e9a3b5"/>
+    <path d="M686 400 L696 275 L588 334 Z" fill="#e9a3b5"/>
+    <!-- round British-shorthair head -->
+    <path d="M512 720 C360 720 292 630 292 500 C292 380 380 300 512 300 C644 300 732 380 732 500 C732 630 664 720 512 720 Z" fill="url(#fur)" stroke="#070a1f" stroke-width="8"/>
+    <!-- cheeks (lighter) -->
+    <path d="M512 470 C440 470 380 520 380 590 C380 660 440 700 512 700 C584 700 644 660 644 590 C644 520 584 470 512 470 Z" fill="#d9dfeb"/>
+    <!-- tabby forehead M -->
+    <path d="M440 350 L466 400 L490 350 M534 350 L558 400 L584 350" fill="none" stroke="#6b7796" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- eyes -->
+    <ellipse cx="446" cy="500" rx="46" ry="48" fill="#ffffff" stroke="#070a1f" stroke-width="6"/>
+    <ellipse cx="578" cy="500" rx="46" ry="48" fill="#ffffff" stroke="#070a1f" stroke-width="6"/>
+    <circle cx="450" cy="504" r="30" fill="#e39b00"/>
+    <circle cx="582" cy="504" r="30" fill="#e39b00"/>
+    <ellipse cx="452" cy="508" rx="10" ry="26" fill="#0e1330"/>
+    <ellipse cx="584" cy="508" rx="10" ry="26" fill="#0e1330"/>
+    <circle cx="462" cy="488" r="8" fill="#ffffff"/>
+    <circle cx="594" cy="488" r="8" fill="#ffffff"/>
+    <!-- serious eyebrows (central banker face) -->
+    <path d="M398 414 L484 428" stroke="#070a1f" stroke-width="10" stroke-linecap="round"/>
+    <path d="M626 414 L540 428" stroke="#070a1f" stroke-width="10" stroke-linecap="round"/>
+    <!-- nose + mouth -->
+    <path d="M496 580 L528 580 L512 600 Z" fill="#e9a3b5" stroke="#070a1f" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M512 600 C512 620 494 626 484 616 M512 600 C512 620 530 626 540 616" fill="none" stroke="#070a1f" stroke-width="5" stroke-linecap="round"/>
+    <!-- whiskers -->
+    <g stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.85">
+      <path d="M392 590 L310 578"/><path d="M392 612 L310 624"/>
+      <path d="M632 590 L714 578"/><path d="M632 612 L714 624"/>
+    </g>
+    <!-- gold round glasses -->
+    <g fill="url(#glass)" stroke="url(#gold)" stroke-width="12">
+      <circle cx="446" cy="500" r="66"/>
+      <circle cx="578" cy="500" r="66"/>
+    </g>
+    <g fill="none" stroke="#070a1f" stroke-width="3" opacity="0.7">
+      <circle cx="446" cy="500" r="72"/><circle cx="578" cy="500" r="72"/>
+      <circle cx="446" cy="500" r="60"/><circle cx="578" cy="500" r="60"/>
+    </g>
+    <path d="M512 496 C508 480 516 480 512 496 M512 490 L512 500" fill="none" stroke="#f5c400" stroke-width="10" stroke-linecap="round"/>
+    <path d="M380 490 L330 470" stroke="#f5c400" stroke-width="10" stroke-linecap="round"/>
+    <path d="M644 490 L694 470" stroke="#f5c400" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <!-- collar tag on the tie knot -->
+  <g transform="translate(512 770)">
+    <circle cx="0" cy="0" r="26" fill="url(#gold)" stroke="#070a1f" stroke-width="5"/>
+    <text x="0" y="10" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="30" fill="#0e1330">€</text>
+  </g>
+
+  <!-- name plate -->
+  <rect x="302" y="935" width="420" height="64" rx="14" fill="#081a5c" stroke="#f5c400" stroke-width="4"/>
+  <text x="512" y="981" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="44" fill="#ffffff" letter-spacing="4">EURO CAT</text>
+</svg>

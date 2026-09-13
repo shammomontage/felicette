@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="$FLCT — the first cat in space, now paired with SpaceX on StonkFun. Hold the cat, collect SPCXX.">
+<title>Félicette</title>
+<link rel="icon" type="image/svg+xml" href="felicette.svg">
+<meta property="og:title" content="Félicette — $FLCT">
+<meta property="og:description" content="Before Starship, there was a cat. Hold the cat, collect SpaceX.">
+<meta property="og:image" content="https://felicette.space/felicette.png">
+<meta property="og:url" content="https://felicette.space/">
+<link rel="canonical" href="https://felicette.space/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Archivo:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+body{margin:0}img{max-width:100%}
+
+  :root{
+    --space:#0B1233; --ink:#05081C; --paper:#F3EBDD; --paper-2:#E8DFCC;
+    --red:#E5462A; --blue:#2F5ECF; --silver:#C9D1DC; --text:#EEF1F8; --muted:#9AA6C4;
+    --paper-text:#1C2130; --paper-muted:#5B6275; --line:rgba(201,209,220,.22);
+    --display:'Michroma',ui-sans-serif,system-ui,sans-serif;
+    --body:'Archivo',ui-sans-serif,system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --w:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--space);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.55;
+    background-image:radial-gradient(1200px 700px at 50% -10%,#1B2A5E 0%,rgba(27,42,94,0) 70%);}
+  a{color:inherit}
+  img,svg{max-width:100%}
+  .wrap{width:min(var(--w),100%);margin-inline:auto;padding-inline:20px}
+  h1,h2,h3{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;line-height:1.12;margin:0;text-wrap:balance}
+  h1{font-size:clamp(1.7rem,4.6vw,3.4rem)}
+  h2{font-size:clamp(1.15rem,2.6vw,1.8rem)}
+  h3{font-size:.95rem;letter-spacing:.08em}
+  p{margin:0}
+  .eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+  .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--display);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;
+    text-decoration:none;padding:.95em 1.4em;border:2px solid var(--red);background:var(--red);color:#fff;cursor:pointer;transition:transform .15s ease,background .15s ease}
+  .btn:hover{background:#ff5a3c;border-color:#ff5a3c;transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--text);border-color:var(--silver)}
+  .btn.ghost:hover{background:rgba(201,209,220,.1);border-color:#fff;transform:translateY(-1px)}
+  .btn:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3px}
+
+  /* nav */
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--display);font-size:.85rem;letter-spacing:.12em;text-transform:uppercase}
+  .brand i{width:10px;height:10px;background:var(--red);display:inline-block;transform:rotate(45deg)}
+  .nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0;font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+  .nav ul a{text-decoration:none;color:var(--muted)} .nav ul a:hover{color:#fff}
+  @media (max-width:700px){.nav ul{display:none}}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:40px;align-items:center;padding-block:48px 64px}
+  .hero-art{position:relative}
+  .hero-art .mascot{width:100%;height:auto;display:block;filter:drop-shadow(0 30px 60px rgba(0,0,0,.45))}
+  .float{animation:float 6s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-14px) rotate(1deg)}}
+  .hero-copy{display:flex;flex-direction:column;gap:22px}
+  .hero-copy .lead{font-size:1.1rem;color:var(--muted);max-width:32em}
+  .hero-copy .lead strong{color:var(--text);font-weight:500}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .telemetry{border:2px solid var(--silver);padding:16px 18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;background:rgba(5,8,28,.55)}
+  .telemetry div{display:flex;flex-direction:column;gap:4px}
+  .telemetry small{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .telemetry b{font-family:var(--mono);font-weight:600;font-size:1.35rem;color:#fff;font-variant-numeric:tabular-nums}
+  .telemetry b em{font-style:normal;font-size:.75rem;color:var(--silver);margin-left:.3em}
+  @media (max-width:820px){.hero{grid-template-columns:1fr;gap:28px;padding-block:32px 48px}.hero-art{max-width:420px;margin-inline:auto}}
+
+  /* ticker */
+  .ticker{background:var(--red);color:#fff;overflow:hidden;border-block:2px solid var(--ink)}
+  .ticker .track{display:flex;gap:0;width:max-content;animation:tick 42s linear infinite;font-family:var(--mono);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;padding-block:10px}
+  .ticker span{padding-inline:28px;white-space:nowrap}
+  .ticker span::after{content:"✦";margin-left:28px;opacity:.7}
+  @keyframes tick{to{transform:translateX(-50%)}}
+
+  /* dossier (paper) */
+  .dossier{background:var(--paper);color:var(--paper-text);padding-block:64px;position:relative;
+    background-image:repeating-linear-gradient(0deg,rgba(28,33,48,.035) 0 1px,transparent 1px 28px)}
+  .dossier .eyebrow{color:var(--blue)}
+  .dossier-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:start}
+  .dossier h2{color:var(--paper-text)}
+  .dossier p{color:var(--paper-text);max-width:62ch}
+  .dossier .body{display:flex;flex-direction:column;gap:18px;font-size:1.05rem}
+  .dossier .body p+p{margin:0}
+  .stamp{position:absolute;right:28px;bottom:36px;font-family:var(--display);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);
+    border:3px solid var(--red);padding:.6em .9em;transform:rotate(-8deg);opacity:.85;mask-image:radial-gradient(circle at 30% 40%,#000 70%,transparent 100%)}
+  .file{border:2px solid var(--paper-text);background:#fff8ea;font-family:var(--mono);font-size:.8rem}
+  .file header{background:var(--paper-text);color:var(--paper);padding:10px 14px;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem}
+  .file dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:0;padding:14px}
+  .file dt{color:var(--paper-muted);text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;padding-top:.15em}
+  .file dd{margin:0;color:var(--paper-text);font-variant-numeric:tabular-nums}
+  .timeline{list-style:none;margin:28px 0 0;padding:0;border-left:2px solid var(--paper-text);display:flex;flex-direction:column;gap:18px}
+  .timeline li{padding-left:18px;position:relative}
+  .timeline li::before{content:"";position:absolute;left:-7px;top:.45em;width:12px;height:12px;background:var(--paper);border:2px solid var(--paper-text)}
+  .timeline li.now::before{background:var(--red);border-color:var(--red)}
+  .timeline time{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;color:var(--blue);display:block}
+  .timeline b{font-weight:700}
+  @media (max-width:820px){.dossier-grid{grid-template-columns:1fr;gap:32px}.stamp{position:static;display:inline-block;margin-bottom:18px;transform:rotate(-4deg)}}
+
+  /* sections on dark */
+  .section{padding-block:72px}
+  .section-head{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;max-width:60ch}
+  .section-head p{color:var(--muted)}
+  .stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--line)}
+  .stage{background:var(--space);padding:26px 24px 30px;display:flex;flex-direction:column;gap:12px;border-top:3px solid var(--red)}
+  .stage .num{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--red)}
+  .stage p{color:var(--muted);font-size:.98rem}
+  @media (max-width:820px){.stages{grid-template-columns:1fr}}
+
+  .readout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--line);border:2px solid var(--silver)}
+  .readout div{background:var(--ink);padding:18px 20px;display:flex;justify-content:space-between;gap:18px;align-items:baseline}
+  .readout small{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .readout b{font-family:var(--mono);font-weight:600;font-size:1.05rem;text-align:right;font-variant-numeric:tabular-nums}
+  .readout b.red{color:var(--red)}
+  @media (max-width:640px){.readout{grid-template-columns:1fr}}
+
+  .board{width:100%;border-collapse:collapse;font-size:.95rem}
+  .board th,.board td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  .board th{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:400}
+  .board tr.us td{color:#fff;background:rgba(229,70,42,.12)}
+  .board td:first-child{font-family:var(--display);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+  .table-wrap{overflow-x:auto}
+
+  .launch{border:2px solid var(--red);padding:28px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;background:rgba(229,70,42,.06)}
+  .ca{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:.85rem}
+  .ca code{background:var(--ink);padding:.55em .8em;border:1px solid var(--line);word-break:break-all}
+  .ca button{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:var(--text);border:1px solid var(--silver);padding:.6em .9em;cursor:pointer}
+  .ca button:hover{background:rgba(201,209,220,.12)}
+  .launch .links{display:flex;flex-direction:column;gap:10px}
+  @media (max-width:760px){.launch{grid-template-columns:1fr}}
+
+  footer{background:var(--ink);padding-block:40px;color:var(--muted);font-size:.85rem}
+  footer .cols{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:28px}
+  footer p{max-width:70ch}
+  footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+  footer a{color:var(--silver);text-decoration:none} footer a:hover{color:#fff}
+  @media (max-width:640px){footer .cols{grid-template-columns:1fr}}
+
+  @media (prefers-reduced-motion:reduce){.float{animation:none}.ticker .track{animation:none;width:auto;flex-wrap:wrap}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="nav" aria-label="Site">
+    <a class="brand" href="#top"><i aria-hidden="true"></i> Félicette</a>
+    <ul>
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#tokenomics">Tokenomics</a></li>
+      <li><a href="#scoreboard">Scoreboard</a></li>
+      <li><a href="#launch">Buy</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-art float">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="mascot" role="img" aria-label="Félicette, the first cat in space, in a 1963 bubble helmet">
+  <defs>
+    <radialGradient id="space" cx="50%" cy="40%" r="75%">
+      <stop offset="0" stop-color="#1b2a5e"/>
+      <stop offset="0.6" stop-color="#0c1436"/>
+      <stop offset="1" stop-color="#05081c"/>
+    </radialGradient>
+    <linearGradient id="visor" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="0.35" stop-color="#9fd4ff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9edf3"/>
+      <stop offset="0.5" stop-color="#aab4c4"/>
+      <stop offset="1" stop-color="#6d7a8e"/>
+    </linearGradient>
+    <linearGradient id="suit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6efe2"/>
+      <stop offset="1" stop-color="#d9cdb8"/>
+    </linearGradient>
+    <linearGradient id="rocket" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#c9d1dc"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff2a8"/>
+      <stop offset="0.5" stop-color="#ff9a2e"/>
+      <stop offset="1" stop-color="#ff4e1a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <g fill="#ffffff">
+    <circle cx="90" cy="120" r="2.5"/><circle cx="200" cy="60" r="1.8"/><circle cx="320" cy="150" r="2.2"/>
+    <circle cx="470" cy="70" r="1.6"/><circle cx="640" cy="110" r="2.6"/><circle cx="760" cy="50" r="1.8"/>
+    <circle cx="900" cy="140" r="2.4"/><circle cx="960" cy="300" r="1.7"/><circle cx="60" cy="330" r="1.9"/>
+    <circle cx="140" cy="520" r="2.3"/><circle cx="950" cy="560" r="2.1"/><circle cx="80" cy="760" r="1.8"/>
+    <circle cx="940" cy="800" r="2.5"/><circle cx="560" cy="180" r="1.5"/><circle cx="820" cy="230" r="1.6"/>
+    <circle cx="240" cy="260" r="1.4"/><circle cx="700" cy="330" r="1.5"/><circle cx="130" cy="900" r="1.8"/>
+  </g>
+  <!-- twinkle stars -->
+  <g stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.9">
+    <path d="M150 210v26M137 223h26"/><path d="M870 400v22M859 411h22"/><path d="M330 880v22M319 891h22"/>
+  </g>
+  <!-- orbit arc -->
+  <ellipse cx="512" cy="560" rx="470" ry="330" fill="none" stroke="#5f7ad1" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="14 12"/>
+
+  <!-- small retro rocket (Véronique) top-right -->
+  <g transform="translate(790 250) rotate(-30)">
+    <path d="M0 -120 C40 -80 40 40 0 90 C-40 40 -40 -80 0 -120Z" fill="url(#rocket)" stroke="#2a3350" stroke-width="5"/>
+    <path d="M-22 40 L-52 96 L-18 84 Z" fill="#e5462a" stroke="#2a3350" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M22 40 L52 96 L18 84 Z" fill="#e5462a" stroke="#2a3350" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="0" cy="-30" r="14" fill="#7fd3ff" stroke="#2a3350" stroke-width="5"/>
+    <path d="M-16 92 C-8 150 8 150 16 92Z" fill="url(#flame)"/>
+  </g>
+
+  <!-- body / suit -->
+  <path d="M232 1024 C232 800 330 700 512 700 C694 700 792 800 792 1024 Z" fill="url(#suit)" stroke="#2a3350" stroke-width="8"/>
+  <!-- suit seams -->
+  <path d="M512 720 V1024" stroke="#2a3350" stroke-opacity="0.35" stroke-width="5"/>
+  <path d="M330 800 C400 770 624 770 694 800" fill="none" stroke="#e5462a" stroke-width="10" stroke-linecap="round"/>
+  <!-- tricolore patch (left chest) -->
+  <g transform="translate(360 830)">
+    <rect x="0" y="0" width="90" height="60" rx="8" fill="#2a3350"/>
+    <rect x="6" y="6" width="26" height="48" rx="4" fill="#2f5ecf"/>
+    <rect x="32" y="6" width="26" height="48" fill="#ffffff"/>
+    <rect x="58" y="6" width="26" height="48" rx="4" fill="#e5462a"/>
+  </g>
+  <!-- mission patch (right chest) -->
+  <g transform="translate(600 815)">
+    <circle cx="40" cy="40" r="42" fill="#2a3350"/>
+    <circle cx="40" cy="40" r="35" fill="#f6efe2"/>
+    <text x="40" y="34" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="20" fill="#2a3350">AG1</text>
+    <text x="40" y="58" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="15" fill="#e5462a">1963</text>
+  </g>
+
+  <!-- helmet neck ring -->
+  <ellipse cx="512" cy="712" rx="182" ry="48" fill="url(#ring)" stroke="#2a3350" stroke-width="8"/>
+  <ellipse cx="512" cy="704" rx="150" ry="30" fill="#3a4460" stroke="#2a3350" stroke-width="6"/>
+
+  <!-- head group -->
+  <g transform="translate(512 470) scale(1.08) translate(-512 -470)">
+    <!-- ears -->
+    <path d="M335 425 L350 312 L448 336 Z" fill="#1c2130" stroke="#5a6684" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M689 425 L674 312 L576 336 Z" fill="#1c2130" stroke="#5a6684" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M352 412 L360 332 L438 354 Z" fill="#f1a1b4"/>
+    <path d="M672 412 L664 332 L586 354 Z" fill="#f1a1b4"/>
+    <!-- head -->
+    <path d="M512 640 C380 640 322 560 322 460 C322 360 400 300 512 300 C624 300 702 360 702 460 C702 560 644 640 512 640 Z" fill="#1c2130" stroke="#5a6684" stroke-width="8"/>
+    <!-- white blaze / muzzle (tuxedo) -->
+    <path d="M512 380 C470 440 420 470 400 560 C420 620 470 640 512 640 C554 640 604 620 624 560 C604 470 554 440 512 380 Z" fill="#ffffff"/>
+    <!-- electrodes (the nerdy detail) -->
+    <g>
+      <circle cx="470" cy="318" r="9" fill="#c9d1dc" stroke="#2a3350" stroke-width="4"/>
+      <circle cx="512" cy="306" r="9" fill="#c9d1dc" stroke="#2a3350" stroke-width="4"/>
+      <circle cx="554" cy="318" r="9" fill="#c9d1dc" stroke="#2a3350" stroke-width="4"/>
+      <path d="M470 318 C480 290 500 290 512 306 C524 290 544 290 554 318" fill="none" stroke="#e5462a" stroke-width="4"/>
+    </g>
+    <!-- eyes -->
+    <ellipse cx="452" cy="470" rx="44" ry="50" fill="#ffffff" stroke="#2a3350" stroke-width="6"/>
+    <ellipse cx="572" cy="470" rx="44" ry="50" fill="#ffffff" stroke="#2a3350" stroke-width="6"/>
+    <ellipse cx="456" cy="474" rx="26" ry="36" fill="#7bc043"/>
+    <ellipse cx="576" cy="474" rx="26" ry="36" fill="#7bc043"/>
+    <ellipse cx="458" cy="478" rx="9" ry="28" fill="#161a26"/>
+    <ellipse cx="578" cy="478" rx="9" ry="28" fill="#161a26"/>
+    <circle cx="466" cy="456" r="8" fill="#ffffff"/>
+    <circle cx="586" cy="456" r="8" fill="#ffffff"/>
+    <!-- nose + mouth -->
+    <path d="M498 540 L526 540 L512 558 Z" fill="#f1a1b4" stroke="#2a3350" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M512 558 C512 578 494 584 484 574 M512 558 C512 578 530 584 540 574" fill="none" stroke="#2a3350" stroke-width="5" stroke-linecap="round"/>
+    <!-- whiskers -->
+    <g stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.9">
+      <path d="M400 540 L336 528"/><path d="M400 560 L336 570"/>
+      <path d="M624 540 L688 528"/><path d="M624 560 L688 570"/>
+    </g>
+  </g>
+
+  <!-- helmet bubble -->
+  <circle cx="512" cy="470" r="250" fill="url(#visor)" stroke="#e9edf3" stroke-width="10"/>
+  <circle cx="512" cy="470" r="250" fill="none" stroke="#2a3350" stroke-width="4" stroke-opacity="0.6"/>
+  <!-- helmet highlight -->
+  <path d="M340 340 C380 270 460 240 530 245" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-opacity="0.75"/>
+  <path d="M320 400 C325 385 332 372 340 360" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-opacity="0.6"/>
+
+</svg>
+
+    </div>
+    <div class="hero-copy">
+      <span class="eyebrow">$FLCT · paired with SPCXX on StonkFun</span>
+      <h1>Before Starship,<br>there was a cat.</h1>
+      <p class="lead">On 18 October 1963, France put a Paris street cat 157 km above the Earth and brought her back alive. <strong>Sixty-three years later she still hasn't been paid.</strong> Hold the cat, collect SpaceX.</p>
+      <div class="cta">
+        <a class="btn" href="#launch">Buy $FLCT</a>
+        <a class="btn ghost" href="#mission">Read the mission file</a>
+      </div>
+      <div class="telemetry" aria-label="Flight telemetry, 18 October 1963">
+        <div><small>Apogee</small><b><span data-count="157">157</span><em>km</em></b></div>
+        <div><small>Flight time</small><b>15<em>min</em></b></div>
+        <div><small>Weightless</small><b>5<em>min</em></b></div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    <span>Hold the cat, collect SpaceX</span><span>157 km up · 0 km of roadmap</span><span>Elon sends rockets · France sent a cat</span><span>First cat in space · 1963</span><span>Rewards paid in SPCXX · nothing to claim</span><span>Chimps · dogs · cat</span>
+    <span>Hold the cat, collect SpaceX</span><span>157 km up · 0 km of roadmap</span><span>Elon sends rockets · France sent a cat</span><span>First cat in space · 1963</span><span>Rewards paid in SPCXX · nothing to claim</span><span>Chimps · dogs · cat</span>
+  </div>
+</div>
+
+<section class="dossier" id="mission">
+  <div class="wrap" style="position:relative">
+    <div class="stamp">Approuvé · CERMA</div>
+    <div class="dossier-grid">
+      <div class="body">
+        <span class="eyebrow">Mission file · Véronique AG1</span>
+        <h2>The first cat in space was a Paris street cat with electrodes in her head.</h2>
+        <p>In 1963 the French space programme bought fourteen cats from a Paris dealer and trained them for spaceflight: centrifuges, compression chambers, restraint boxes. Cat C 341 stayed the calmest. Scientists implanted electrodes in her skull to record brain activity during the flight. The press later named her Félicette.</p>
+        <p>On 18 October she rode a Véronique AG1 sounding rocket from the Hammaguir range in the Sahara to an apogee of 157 kilometres. Fifteen minutes of flight, about five of them weightless, then a parachute descent into the desert, where the recovery team found her alive and, by all accounts, unimpressed.</p>
+        <p>The Americans sent chimps. The Soviets sent dogs. France sent a cat, got her back, and then forgot to tell anyone for fifty years. In 2019 a bronze statue finally went up in Strasbourg. In 2026 she gets a token paired with SpaceX. Progress.</p>
+        <ol class="timeline">
+          <li><time>1963 · 18 OCT</time><b>Launch.</b> Véronique AG1, Hammaguir. 157 km apogee, recovered alive.</li>
+          <li><time>2019 · 18 DEC</time><b>Statue.</b> Bronze Félicette unveiled at the International Space University, Strasbourg.</li>
+          <li class="now"><time>2026</time><b>$FLCT.</b> Launches on StonkFun, paired with the SpaceX xStock. Holders are paid in SPCXX.</li>
+        </ol>
+      </div>
+      <aside class="file" aria-label="Crew record">
+        <header>Crew record · C 341</header>
+        <dl>
+          <dt>Name</dt><dd>Félicette (given by the press)</dd>
+          <dt>Origin</dt><dd>Paris, street</dd>
+          <dt>Coat</dt><dd>Tuxedo, black &amp; white</dd>
+          <dt>Selected from</dt><dd>14 candidates</dd>
+          <dt>Instruments</dt><dd>Cranial electrodes, EEG</dd>
+          <dt>Vehicle</dt><dd>Véronique AG1 sounding rocket</dd>
+          <dt>Site</dt><dd>Hammaguir, Algeria</dd>
+          <dt>Apogee</dt><dd>157 km</dd>
+          <dt>Duration</dt><dd>~15 min · ~5 min weightless</dd>
+          <dt>Recovery</dt><dd>Parachute, alive</dd>
+          <dt>Compensation</dt><dd>None on record. Pending.</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Flight plan</span>
+      <h2>Three stages. No staking screens, no lock-ups, no homework.</h2>
+      <p>$FLCT is a reward token on StonkFun. Every transfer carries a 3% tax, and StonkFun pays that out to holders in the quote asset. The quote asset here is SPCXX, the tokenized SpaceX stock. That's the whole mechanism.</p>
+    </div>
+    <div class="stages">
+      <article class="stage">
+        <span class="num">Stage 1 · Ignition</span>
+        <h3>Buy the cat</h3>
+        <p>Pick up $FLCT on StonkFun. The token trades against SPCXX from day one, on a bonding curve until it graduates into a Raydium pool.</p>
+      </article>
+      <article class="stage">
+        <span class="num">Stage 2 · Coast</span>
+        <h3>Hold the cat</h3>
+        <p>Do nothing. Félicette did fifteen minutes of nothing at 157 km and made history. Every trade on the token feeds the 3% reward pool.</p>
+      </article>
+      <article class="stage">
+        <span class="num">Stage 3 · Recovery</span>
+        <h3>SPCXX lands in your wallet</h3>
+        <p>Rewards are distributed automatically to holders, pro rata, in SPCXX. Nothing to claim, nothing to stake. Parachute included.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tokenomics" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Telemetry</span>
+      <h2>Tokenomics</h2>
+    </div>
+    <div class="readout">
+      <div><small>Ticker</small><b class="red">$FLCT</b></div>
+      <div><small>Quote asset</small><b>SPCXX · SpaceX xStock</b></div>
+      <div><small>Total supply</small><b>1,000,000,000</b></div>
+      <div><small>Launchpad</small><b>StonkFun · Raydium LaunchLab</b></div>
+      <div><small>Holder reward tax</small><b class="red">3% · paid in SPCXX</b></div>
+      <div><small>Graduation</small><b>Auto to Raydium pool</b></div>
+      <div><small>Liquidity</small><b>Permanently locked</b></div>
+      <div><small>Metadata &amp; art</small><b>Stored on Arweave</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="scoreboard" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Space race</span>
+      <h2>Scoreboard, 1957–1963</h2>
+      <p>Everyone remembers the chimp. Nobody remembers the cat. We're fixing that.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="board">
+        <thead><tr><th>Nation</th><th>Crew</th><th>Year</th><th>Came back</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>USSR</td><td>Belka &amp; Strelka, dogs</td><td class="mono">1960</td><td>Yes</td><td>Orbited the Earth. Strelka's puppy was gifted to the Kennedys.</td></tr>
+          <tr><td>USA</td><td>Ham, chimpanzee</td><td class="mono">1961</td><td>Yes</td><td>Pulled levers for banana pellets. Got a Wikipedia page and a museum.</td></tr>
+          <tr class="us"><td>France</td><td>Félicette, cat</td><td class="mono">1963</td><td>Yes</td><td>Electrodes in skull. Stayed calm. Waited 56 years for a statue. Now has a token.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="launch" style="padding-top:0">
+  <div class="wrap">
+    <div class="launch">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span class="eyebrow">Launch window</span>
+        <h2>Get on board</h2>
+        <p style="color:var(--muted);max-width:52ch">Buy on StonkFun with SPCXX or SOL. Check the contract address below against the one on the StonkFun page before you trade; there will be copies.</p>
+        <div class="ca">
+          <span>CA</span>
+          <code id="ca">Contract address published at launch</code>
+          <button type="button" id="copy" hidden>Copy</button>
+        </div>
+      </div>
+      <div class="links">
+        <a class="btn" id="buy" href="https://stonkfun.xyz" target="_blank" rel="noopener">Buy on StonkFun</a>
+        <a class="btn ghost" id="x" href="https://x.com" target="_blank" rel="noopener">Follow on X</a>
+        <a class="btn ghost" id="tg" href="https://t.me" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap cols">
+    <p>$FLCT is a community meme coin with no intrinsic value, no roadmap and no expectation of financial return. It is not affiliated with SpaceX, CNES, the French space programme or any xStocks issuer; holding the token gives no claim on SpaceX shares. SPCXX rewards depend entirely on trading volume and can be zero. Do your own research, and only spend what you can afford to launch into the Sahara.</p>
+    <ul>
+      <li><a href="https://stonkfun.xyz" target="_blank" rel="noopener">StonkFun</a></li>
+      <li><a href="#mission">Mission file</a></li>
+      <li><a href="#tokenomics">Tokenomics</a></li>
+      <li><a href="https://felicette.space">felicette.space</a></li>
+      <li>Félicette · 1963–∞</li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  // ---- Edit these after launch ----------------------------------------
+  const CONTRACT = "";                       // paste the token mint address here
+  const STONKFUN_URL = "https://stonkfun.xyz"; // paste the token page URL here
+  const X_URL = "https://x.com";              // e.g. https://x.com/felicette_spcx
+  const TG_URL = "https://t.me";              // e.g. https://t.me/felicette
+  // ----------------------------------------------------------------------
+  const ca = document.getElementById('ca'), copy = document.getElementById('copy');
+  if (CONTRACT) {
+    ca.textContent = CONTRACT; copy.hidden = false;
+    copy.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(CONTRACT); copy.textContent = 'Copied'; setTimeout(() => copy.textContent = 'Copy', 1500); }
+      catch (e) { copy.textContent = 'Select & copy'; }
+    });
+  }
+  document.getElementById('buy').href = STONKFUN_URL;
+  document.getElementById('x').href = X_URL;
+  document.getElementById('tg').href = TG_URL;
+
+  // apogee count-up on load (skipped for reduced motion)
+  const el = document.querySelector('[data-count]');
+  if (el && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const target = +el.dataset.count, t0 = performance.now(), dur = 1400;
+    const step = (t) => { const p = Math.min(1, (t - t0) / dur); el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }
+</script>
+
+</body>
+</html>
